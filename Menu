@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2><a href="main.php">Main</a></h2>
+
+    <hr>
+    <br>Category</br>
+    <form action="add2.php" method="post">
+     <input type="text" name="category"
+     style="width:300px;height:35px;font-size:20px;">
+     <p><textarea name="description"
+     style="width:600px;height:50px;font-size:20px;"></textarea>&nbsp;
+     <input type="submit" placeholder="제출"></p>
+    </form>
+    <hr>
+
+     <form action="add.php" method="post">
+      <br><input type="text" name="menuname"
+      style="width:300px;height:35px;font-size:20px; "></br>
+      <p><textarea name="description" style="width:600px;height:50px;font-size:20px;"></textarea>&nbsp;
+      <input type="submit" placeholder="제출"></p>
+    </form>
+
+    <form>
+     <div id="box">
+     <input type="text">
+     <input type="button" value="추가" onclick="add_textbox()">
+     </div>
+    </form>
+    <script>
+    const add_textbox = () => {
+    const box = document.getElementById("box");
+    const newP = document.createElement('p');
+    newP.innerHTML = "<input type='text'> <input type='button' value='삭제' onclick='remove(this)'>";
+    box.appendChild(newP);
+    }
+    const remove = (obj) => {
+    document.getElementById('box').removeChild(obj.parentNode);
+    }
+    </script>
