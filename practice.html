@@ -1,0 +1,30 @@
+<div id="demo">
+   some content
+</div>
+
+<script>
+   // 새로운 p 생성하기
+   var p = document.createElement("p");
+   var node = document.createTextNode("Some new text");
+   // p에 텍스트 추가하기
+   p.appendChild(node);
+
+   var div = document.getElementById("demo");
+   // div에 p 추가하기
+   div.appendChild(p);
+</script>
+
+이렇게 하면 새로운 p가 생성되고, 페이지의 기존 div element에 추가된다.
+
+<div id="demo">
+   <p id="p1">This is a paragraph.</p>
+   <p id="p2">This is another paragraph.</p>
+</div>
+
+<script>
+   var parent = document.getElementById("demo");
+   var child = document.getElementById("p1");
+   parent.removeChild(child);
+</script>
+
+이는 페이지의 id=”p1” p를 제거한다.
