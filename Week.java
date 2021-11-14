@@ -1,0 +1,6 @@
+package p220;
+
+public enum Week {
+	MONDAY, TUESDAT, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY, SUNDAY
+
+}

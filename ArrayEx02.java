@@ -1,49 +1,61 @@
-package p183;
+package p216;
 
 public class ArrayEx02 {
 
 	public static void main(String[] args) {
-		//배열을 쓰는 이유는 변수를 여러개 만들지 않기 위해 (효율성)
-		int[] intArray=null;
-		double[] doubleArray=null;
-		String[] strArray=null;
-		
-		//배열을 생성하는 방법1 - 배열선언하면서 바로 값을 넣기
-		//값의 갯수만큼 배열의 크기가 잡힘
-		/*int[] iA1 = {1,2,3,4};
-		double[] dA1= {1.2, 2.2};
-		System.out.println(dA1[1]);
-		System.out.println(iA1[3]);*/
-		
-		//배열을 생성하는 방법2 - 변수 선언후 값 목록 대입 *실무에서 가장 많이 쓰임(중요)
-		// 데이터타입[] 변수;
-		// 변수 = new 타입[] {값0, 값1, 값2, 값3, ...);
-		/*boolean[] ba1;
-		ba1 = new boolean[] {true, true, false};
-		String[] sa1;
-		sa1 = new String[] {"홍길동", "김유신"};
-		float[] fa1;
-		fa1=new float[] {1.1f, 2.2f, 3.3f};
-		System.out.println(ba1[2]);
-		System.out.println(sa1[1]);
-		System.out.println(fa1[0]);*/
-		
-		//배열을 생성하는 방법3 - 타입[] 변수 = new 타입[길이];
-		//배열의 공간을 힙메모리에 만들어 두고 나중에 값 넣는 경우에 이용함
-		int[] ia3 = new int[5];
-		double[] da3 = new double[10];
-		char[] ca3 = new char[3];
-		boolean[] ba3 = new boolean[4];
-		String[] sa3 = new String[5];
-		//ia3배열의 0번 인덱스의 값을 출력해 보세요
-		//힙메모리에 자료값이 할당되면 자동으로 기본값들이 채워진다.
-		//스택메모리는 자동으로 초기값이 안채워짐.
-		System.out.println(ia3[0]);//0
-		System.out.println(da3[0]);//0.0
-		System.out.println(ca3[0]);//공백
-		System.out.println(ba3[0]);//false
-		System.out.println(sa3[0]);//null
-		
+		// 2차원 배열
+		// 방법1 배열 선언하고 바로 초기값을 넣는다.
+		/*int[][] scores = new int[][] {{1,2,3},{4,5,6}};
+			System.out.print(scores[0][2]);
+			System.out.println(scores[1][1]);
+		char[][] c = {{'a','b'},{'c','d'},{'e','f'}};
+		for(char[] a : c) {
+			for(char cc : a) {
+				System.out.print(cc + " ");
+			}
+			System.out.println();
 		}
-	}
-
+		System.out.println(c.length); //행의 길이
+		System.out.println(c[0].length); //열의 길이
+		for(int i=0;i<c.length;i++) { //0,1,2
+			for(int j=0;j<c[i].length;j++) {
+				System.out.print(c[i][j]+" ");
+			}
+			System.out.println();*/
+		
+		// 3차원 배열
+		double[][][] jumsu = { { {1.1,2.2},{3.3,4.4},{5.5,6.6 } },
+						     { {7.7,8.8},{9.9,10.10},{11.11,12.12}}};
+	    //5.5 출력해 보기
+        System.out.println(jumsu[0][2][0]);
+	    //9.9 출력해 보기
+        System.out.println(jumsu[1][1][0]);
+        //전체 출력하기 for문
+        //면 for 행 for 열for
+        //면의 길이는 jumsu.length 배열의 길이, 
+        //행의 길이 = 0면의 길이 jumsu[0].length
+        //열의 길이 = jumsu[0][0].length
+        System.out.println(jumsu.length + " " + jumsu[0].length + " " + jumsu[0][0].length);
+        
+        for(int i=0;i<jumsu.length;i++) {//면
+        	for(int j=0;j<jumsu[i].length;j++) {//행
+        		for(int k=0;k<jumsu[i][i].length;k++) {//열
+        			System.out.print(jumsu[i][j][k]+" ");
+        		}
+        		System.out.println();
+        	}
+        	System.out.println();
+        }
+        System.out.println("====================");
+        //향상된 for문 출력하기
+        for(double[][] j1 : jumsu) {
+        	for(double[] j11 : j1) {
+        		for(double j111 : j11) {
+        			System.out.print(j111+" ");
+        		}
+        		System.out.println();
+        	}
+        	System.out.println();
+        }
+}
+}
